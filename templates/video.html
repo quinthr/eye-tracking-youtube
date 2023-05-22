@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Watch Youtube</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/video-js.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='css/videojs-playlist-ui.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='css/video.css') }}" rel="stylesheet">
+    <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <video
+            autoplay
+            class="video-js vjs-default-skin"
+            controls
+            data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v={{videos[0].id}}"}], "youtube": { "iv_load_policy": 3 }, "youtube": { "ytControls": 0 }, "youtube": { "disablekb": 1 }, "youtube": { "playsinline": 1 } }'
+            height="967px"
+            id="vid1"
+            preload
+            width="1700px"
+    >
+    </video>
+    <div class="playlist-container  preview-player-dimensions">
+        <div class="vjs-playlist"></div>
+    </div>
+</div>
+<div class="container-overlay">
+
+</div>
+
+<script src="{{ url_for('static', filename='js/videojs-playlist-ui.js') }}" type="text/javascript"></script>
+<script src="{{ url_for('static', filename='js/videojs-playlist.js') }}" type="text/javascript"></script>
+<script src="{{ url_for('static', filename='js/Youtube.min.js') }}" type="text/javascript"></script>
+<script src="{{ url_for('static', filename='js/custom-video.js') }}" type="text/javascript"></script>
+<script>
+        var player = videojs('vid1');
+        player.playlist([
+            {% for video in videos %}
+            {
+            sources: [{
+                src: 'https://www.youtube.com/watch?v={{ video.id }}',
+                type: 'video/youtube'
+            }],
+                poster: '{{ video.thumbnails.high.url }}',
+                thumbnail: [
+                    {
+                      srcset: '{{ video.thumbnails.high.url }}',
+                      type: 'image/png',
+                      media: '(max-height: 10px;)'
+                    }
+                ],
+                name: "{{ video.title|safe }}",
+            },
+            {% endfor %}
+        ]);
+
+</script>
+</body>
+</html>

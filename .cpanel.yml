@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/pltliont/public_html/eye-tracking-youtube.com
+    - /bin/cp app.py $DEPLOYPATH
+    - /bin/cp -R * $DEPLOYPATH
