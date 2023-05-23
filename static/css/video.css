@@ -130,7 +130,13 @@ body {
     top: 0;
     margin-left: 16%;
     opacity:0;
+    z-index:3001;
 }
 #webgazerVideoContainer {
     display:none !important;
+}
+
+#vid1 div {
+    position:relative;
+    z-index:3000;
 }
