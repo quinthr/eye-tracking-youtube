@@ -374,5 +374,5 @@ a:link {
     text-decoration:none;
 }
 #webgazerVideoContainer {
-    display:none;
+    display:none !important;
 }
