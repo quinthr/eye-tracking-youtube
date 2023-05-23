@@ -136,7 +136,7 @@ body {
     display:none !important;
 }
 
-#vid1 div {
+#vid1 div:first-child {
     position:relative;
     z-index:3000;
 }
