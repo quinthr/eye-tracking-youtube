@@ -90,11 +90,11 @@ def watchCategory(categoryName):
     youtubeCategories = {
         "Gaming": 20,
         "Sports":17,
-        "Science and Technology":28,
-        "News and Politics":25,
+        "ScienceAndTechnology":28,
+        "NewsAndPolitics":25,
         "Music":10,
         "Entertainment":24,
-        "Film and Animation":1,
+        "FilmAndAnimation":1,
     }
     category_id =youtubeCategories.get(categoryName, None)
     if category_id is None:
