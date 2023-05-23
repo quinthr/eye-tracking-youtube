@@ -12,11 +12,12 @@ body {
     height:100%;
 }
 .video-js .vjs-tech {
-    position:static !important;
     display: block;
     height: 967px !important;
     width:1225px !important;
     margin-left:20%;
+    position:relative !important;
+    z-index:3000;
 }
 .vjs-has-started .vjs-control-bar, .vjs-audio-only-mode .vjs-control-bar {
     flex-direction: column;
@@ -137,6 +138,5 @@ body {
 }
 
 #vid1 div:first-child {
-    position:relative;
-    z-index:3000;
+
 }
