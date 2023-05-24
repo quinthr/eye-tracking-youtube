@@ -34,9 +34,12 @@ player.ready(function() {
   if (promise !== undefined) {
     promise.then(function() {
       // Autoplay started!
-      player.play();
-      playButton.click();
-      document.elementFromPoint(10, 10).click();
+      while (true) {
+          if (player.isReady()) {
+            player.play();
+            break;
+          }
+        }
     }).catch(function(error) {
       // Autoplay was prevented.
     });
