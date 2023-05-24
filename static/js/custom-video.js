@@ -33,20 +33,17 @@ window.onload = function(event) {
   player.play();
   playButton.click();
   document.elementFromPoint(10, 10).click();
-  player.ready(function() {
-      var promise = player.play();
-      if (promise !== undefined) {
-        promise.then(function() {
-          // Autoplay started!
-          player.play();
-          playButton.click();
-          document.elementFromPoint(10, 10).click();
-        }).catch(function(error) {
-          // Autoplay was prevented.
-        });
-      }
-    });
 };
-player.play();
-playButton.click();
-document.elementFromPoint(10, 10).click();
+player.ready(function() {
+  var promise = player.play();
+  if (promise !== undefined) {
+    promise.then(function() {
+      // Autoplay started!
+      player.play();
+      playButton.click();
+      document.elementFromPoint(10, 10).click();
+    }).catch(function(error) {
+      // Autoplay was prevented.
+    });
+  }
+});
