@@ -37,6 +37,7 @@ player.ready(function() {
       while (true) {
           if (player.isReady()) {
             player.play();
+            console.log('LOOPING');
             break;
           }
         }
