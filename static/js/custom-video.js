@@ -29,11 +29,6 @@ homeButton.style = "background-color: rgba(43, 51, 63, 0.7); border: 1px solid #
 // Play through the playlist automatically.
 var player = videojs('vid1');
 player.playlist.autoadvance(0);
-window.onload = function(event) {
-  player.play();
-  playButton.click();
-  document.elementFromPoint(10, 10).click();
-};
 player.ready(function() {
   var promise = player.play();
   if (promise !== undefined) {
