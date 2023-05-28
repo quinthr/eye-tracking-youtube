@@ -30,5 +30,6 @@ homeButton.style = "background-color: rgba(43, 51, 63, 0.7); border: 1px solid #
 var player = videojs('vid1');
 player.playlist.autoadvance(0);
 player.ready(function() {
+    console.log(new Date());
     player.play();
 });
