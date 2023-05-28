@@ -35,10 +35,12 @@ player.ready(function() {
     promise.then(function() {
       // Autoplay started!
       while (true) {
-          if (player.isReady()) {
-            player.play();
-            console.log('LOOPING');
-            break;
+          if (player.isReady_) {
+            if(player.paused()) {
+                player.play();
+                console.log('LOOPING');
+                break;
+            }
           }
         }
     }).catch(function(error) {
