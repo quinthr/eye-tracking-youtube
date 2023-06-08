@@ -23,8 +23,8 @@ skipBackButton.onclick = function() {
   var targetTime = currentTime - 5;
   player.currentTime(targetTime);
 };
-skipBackButton.style = "background-color: rgba(43, 51, 63, 0.7); border: 1px solid #323232;"
-homeButton.style = "background-color: rgba(43, 51, 63, 0.7); border: 1px solid #323232; cursor:pointer;"
+skipBackButton.style = "background-color: white; border: 1px solid #e6e6e6;"
+homeButton.style = "background-color: white; border: 1px solid #e6e6e6; cursor:pointer;"
 
 // Play through the playlist automatically.
 var player = videojs('vid1');
