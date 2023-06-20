@@ -143,7 +143,7 @@
         });
       }
 
-      li.className = 'vjs-playlist-item';
+      li.className = 'vjs-playlist-item webgazer-clickable';
       li.setAttribute('tabIndex', 0); // Thumbnail image
 
       this.thumbnail = createThumbnail(item.thumbnail);

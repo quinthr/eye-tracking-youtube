@@ -5,14 +5,15 @@ videojs(document.querySelector("#vid1")).playlistUi();
 var player = videojs('vid1');
 player.controlBar.addChild('Button', {
   text: 'Skip Backward',
-  className: 'vjs-skip-backward-5',
+  className: 'vjs-skip-backward-5 webgazer-clickable',
 });
 player.controlBar.addChild('Button', {
   text: 'Home',
-  className: 'home-button',
+  className: 'home-button webgazer-clickable',
 });
+console.log(player.controlBar.children)
 skipBackButton = document.getElementsByClassName('vjs-skip-backward-5')[0];
-playButton = document.getElementsByClassName('vjs-big-play-button')[0];
+playButton = document.getElementsByClassName('vjs-play-control')[0];
 homeButton = document.getElementsByClassName('home-button')[0];
 homeIconPlaceholder = homeButton.querySelector('.vjs-icon-placeholder');
 homeButton.onclick = function() {
@@ -23,6 +24,7 @@ skipBackButton.onclick = function() {
   var targetTime = currentTime - 5;
   player.currentTime(targetTime);
 };
+playButton.classList.add("webgazer-clickable")
 skipBackButton.style = "background-color: white; border: 1px solid #e6e6e6;"
 homeButton.style = "background-color: white; border: 1px solid #e6e6e6; cursor:pointer;"
 
